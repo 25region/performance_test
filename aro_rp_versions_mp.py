@@ -38,13 +38,13 @@ def process_location(location=None):
 if __name__ == "__main__":
 
     locations = [
-			"eastus2euap", "westcentralus", "australiaeast", "japaneast", "koreacentral",
-			"australiasoutheast", "centralindia", "southindia", "japanwest", "eastasia",
-			"centralus", "eastus", "eastus2", "northcentralus", "southcentralus",
-			"westus", "westus2", "canadacentral", "canadaeast", "francecentral",
-			"germanywestcentral", "northeurope", "norwayeast", "switzerlandnorth", "switzerlandwest",
-			"westeurope", "brazilsouth", "brazilsoutheast", "southeastasia", "uaenorth",
-			"southafricanorth", "uksouth", "ukwest",
+        "eastus2euap", "westcentralus", "australiaeast", "japaneast", "koreacentral",
+        "australiasoutheast", "centralindia", "southindia", "japanwest", "eastasia",
+        "centralus", "eastus", "eastus2", "northcentralus", "southcentralus",
+        "westus", "westus2", "canadacentral", "canadaeast", "francecentral",
+        "germanywestcentral", "northeurope", "norwayeast", "switzerlandnorth", "switzerlandwest",
+        "westeurope", "brazilsouth", "brazilsoutheast", "southeastasia", "uaenorth",
+        "southafricanorth", "uksouth", "ukwest",
     ]
 
     results = []

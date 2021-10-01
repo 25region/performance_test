@@ -9,7 +9,7 @@ pwsh aro_rp_versions.ps1  2.80s user 0.57s system 21% cpu 15.628 total
 ```
 - PowerShell [runspace pools](https://github.com/25region/performance_test/blob/main/aro_rp_versions_runspace_pool.ps1):
 ```bash
-pwsh aro_rp_versions.ps1  2.29s user 0.63s system 144% cpu 2.025 total
+pwsh aro_rp_versions_runspace_pool.ps1  2.29s user 0.63s system 144% cpu 2.025 total
 ```
 
 ### Python 3.9.7:
@@ -19,7 +19,7 @@ python3 aro_rp_versions.py  1.77s user 0.24s system 13% cpu 15.157 total
 ```
 - Python with [multiprocessing](https://github.com/25region/performance_test/blob/main/aro_rp_versions_mp.py):
 ```bash
-python3 aro_rp_versions.py  9.00s user 4.72s system 538% cpu 2.549 total
+python3 aro_rp_versions_mp.py  9.00s user 4.72s system 538% cpu 2.549 total
 ```
 - Python with [multithreading](https://github.com/25region/performance_test/blob/main/aro_rp_versions_mt.py):
 ```bash
