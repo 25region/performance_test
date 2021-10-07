@@ -3,7 +3,7 @@
 ## Performance results
 
 ### PowerShell 7.1.4:
-- Serial execution:
+- [Serial execution](https://github.com/25region/performance_test/blob/main/aro_rp_versions_serial.ps1):
 ```bash
 pwsh aro_rp_versions.ps1  2.80s user 0.57s system 21% cpu 15.628 total
 ```
@@ -13,7 +13,7 @@ pwsh aro_rp_versions_runspace_pool.ps1  2.29s user 0.63s system 144% cpu 2.025 t
 ```
 
 ### Python 3.9.7:
-- Serial execution:
+- [Serial execution](https://github.com/25region/performance_test/blob/main/aro_rp_versions_serial.py):
 ```bash
 python3 aro_rp_versions.py  1.77s user 0.24s system 13% cpu 15.157 total
 ```
@@ -27,7 +27,7 @@ python3 aro_rp_versions_mt.py  1.39s user 0.55s system 145% cpu 1.325 total
 ```
 
 ### Golang 1.15.15:
-- Serial execution:
+- [Serial execution](https://github.com/25region/performance_test/blob/main/go_serial/main.go):
 ```bash
 go run main.go  0.61s user 1.06s system 37% cpu 4.428 total
 ```
