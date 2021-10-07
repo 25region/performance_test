@@ -100,4 +100,4 @@ foreach ($Runspace in $Runspaces ) {
 $Pool.Close()
 $Pool.Dispose()
 
-$Results | sort
+$Results | Sort-Object -Property Location
