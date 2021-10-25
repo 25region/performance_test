@@ -7,7 +7,11 @@
 ```bash
 pwsh aro_rp_versions.ps1  2.80s user 0.57s system 21% cpu 15.628 total
 ```
-- PowerShell [runspace pools](https://github.com/25region/performance_test/blob/main/aro_rp_versions_runspace_pool.ps1):
+- [Threads](https://github.com/25region/performance_test/blob/main/aro_rp_versions_threads.ps1):
+```
+pwsh aro_rp_versions_threads.ps1  3.80s user 2.55s system 203% cpu 3.125 total
+```
+- [Runspace pools](https://github.com/25region/performance_test/blob/main/aro_rp_versions_runspace_pool.ps1):
 ```bash
 pwsh aro_rp_versions_runspace_pool.ps1  2.29s user 0.63s system 144% cpu 2.025 total
 ```

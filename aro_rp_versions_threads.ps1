@@ -26,35 +26,9 @@
 
 [CmdletBinding()]
 param (
-    [Parameter(Mandatory=$false)]
-    [string]$InputLocationsFile = '.\rplocations.txt',
-
     [Parameter(ParameterSetName='Location', Mandatory=$false)]
     [string[]]$location
 )
-
-#Region Functions
-
-function Get-Locations {
-    param (
-        $InputFile
-    )
-    
-    [array]$locations = @()
-
-    try {
-        $locations = Get-Content $InputLocationsFile -EA Stop
-    }
-    catch {
-        Write-Warning "Failed to retrieve RP locations from `"${InputLocationsFile}`": $_"
-        exit 1
-    }
-
-    return $locations
-
-}  
-
-#EndRegion Functions
 
 [array]$locations = @()
 [array]$colLocations = @()
@@ -65,7 +39,14 @@ if($ParameterSet -eq "Location"){
     $locations = $location
 }
 else{
-    $locations = Get-Locations -InputFile $InputLocationsFile
+    $locations = "eastus2euap", "westcentralus", "australiaeast", "japaneast", "koreacentral",
+    "australiasoutheast", "centralindia", "southindia", "japanwest", "eastasia",
+    "centralus", "eastus", "eastus2", "northcentralus", "southcentralus",
+    "westus", "westus2", "canadacentral", "canadaeast", "francecentral",
+    "germanywestcentral", "northeurope", "norwayeast", "switzerlandnorth", "switzerlandwest",
+    "westeurope", "brazilsouth", "brazilsoutheast", "southeastasia", "uaenorth",
+    "southafricanorth", "uksouth", "ukwest"
+
 }
 
 $Jobs = @()
@@ -91,7 +72,7 @@ foreach($loc in $locations){
             param (
                 [string]$location
             )
-            
+
             try{
                 $versions = Invoke-RestMethod "https://arorpversion.blob.core.windows.net/ocpversions/${location}"
                 return $versions.version -join ','
@@ -101,12 +82,12 @@ foreach($loc in $locations){
                 return $null
             }
         }
-        
+
         function Get-RPVersion {
             param (
                 [string]$location
             )
-            
+
             try {
                 $rpCommit = Invoke-RestMethod -Uri "https://arorpversion.blob.core.windows.net/rpversion/${location}"
                 return $rpCommit
@@ -115,7 +96,7 @@ foreach($loc in $locations){
                 write-Verbose "Failed to retrieve RP versions for ${location}: $_"
                 return $null
             }
-            
+
         }
     }
 
